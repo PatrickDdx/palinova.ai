@@ -1,0 +1,96 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.card-row {
+    display: flex;
+    gap: 1.5rem; /* space BETWEEN the three cards */
+    padding: 0 0;
+    margin-bottom: 2rem;
+}
+
+.card-link {
+    flex: 1;                  /* each LINK now takes an equal share of the row */
+    text-decoration: none;    /* kill the underline links get by default   */
+    color: inherit;           /* stop the text turning link-blue            */
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    padding: 1.5rem; /* breathing room INSIDE each card */
+    text-align: center;
+    height: 100%;             /* fill the link's height so all cards match */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.example-card  {
+    display: flex;               /* text block and image sit side by side */
+    align-items: center;         /* vertically center them against each other */
+    gap: 2rem;                   /* space between text and image */
+    padding: 1.5rem;
+    margin-bottom: 2rem;         /* space between stacked example cards */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+.example-card-text {
+    flex: 1;
+}
+
+.example-card img {
+    width: 40%;                  /* cap the image so it doesn't dominate */
+    height: auto;                /* keep its aspect ratio */
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;   /* one group left, one group right */
+    align-items: center;              /* vertically center everything */
+}
+
+.logo-group {
+    display: flex;                    /* logo and name sit side by side */
+    align-items: center;              /* line them up vertically */
+    gap: 0.75rem;                     /* small space between logo and name */
+}
+
+.logo-group img {
+    height: 40px;        /* SVGs render at their natural size — cap it */
+    width: auto;         /* keep the aspect ratio */
+}
+
+.logo-group span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.contact-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */ 
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+@media (max-width: 700px) {
+    .card-row,
+    .example-card {
+        flex-direction: column;
+    }
+    .example-card img {
+        width: 100%;
+    }
+}

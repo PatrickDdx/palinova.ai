@@ -1,143 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>palinova.ai</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@200;300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0a0a0f;
-      --text: #e8e4dc;
-      --accent: #b8a98a;
-      --dim: #4a4640;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Raleway', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    /* subtle grain overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
-    /* ambient glow */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(184,169,138,0.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem;
-      animation: fadeIn 1.6s ease both;
-    }
-
-    .logo-wrap {
-      width: 140px;
-      height: 140px;
-      animation: logoReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 0 24px rgba(184,169,138,0.25));
-    }
-
-    .wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      letter-spacing: 0.18em;
-      color: var(--text);
-      animation: fadeUp 1.6s 0.3s ease both;
-    }
-
-    .wordmark span {
-      color: var(--accent);
-    }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      animation: expand 1.2s 0.6s ease both;
-    }
-
-    .tagline {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 200;
-      font-size: clamp(0.65rem, 2vw, 0.78rem);
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: var(--dim);
-      animation: fadeUp 1.6s 0.7s ease both;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes logoReveal {
-      from { opacity: 0; transform: scale(0.88) translateY(10px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes expand {
-      from { width: 0; opacity: 0; }
-      to   { width: 40px; opacity: 1; }
-    }
-  </style>
+  <title>Palinova.ai</title>
+  <meta name="description" content="Palinova.ai — custom dashboards, AI integration, and tools for healthcare workflows." />
+  <!-- CSS will be linked here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo-wrap">
-      <img src="logo.svg" alt="palinova.ai logo" />
+
+  <header>
+    <div class="logo-group">
+      <img src="logo.svg" alt="Company logo" />
+      <span>Palinova.ai</span>
     </div>
-    <div class="wordmark">palinova<span>.ai</span></div>
-    <div class="divider"></div>
-    <p class="tagline">Coming Soon</p>
-  </div>
+    <a href="#contact" role="button">Book a meeting</a>
+  </header>
+
+  <main>
+
+    <!-- Quick Navigation for: Core Services Section -->
+    <div class="card-row">
+      <!-- Card 1 -->
+      <a href="#dashboards" class="card-link">
+        <div class="card">
+          <h3>Dashboards</h3>
+          <p>Track patient metrics, appointment wait times, and billing pipelines in a clean, unified screen.</p>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#ai-integration" class="card-link">
+        <div class="card">
+          <h3>AI Integration</h3>
+          <p>Use AI to enhance your workflow - offline and secure. Local ChatGPT, AI-Agents and more...</p>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#custom-tools" class="card-link">
+        <div class="card">
+          <h3>Custom Tools</h3>
+          <p>Automate the boring stuff. Software that actually solves your problems and integrate in your workflow.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Core Services Section -->
+    <!-- Big cards with text on the left and an image on the right. -->
+    <!-- Example 1 -->
+    <div class="example-card" id="dashboards">
+      <div class="example-card-text">
+        <h2>Dashboards</h2>
+        <p>some text of a case study example.... Multiline text on the left. Example image on the right.</p>
+      </div>
+      <img src="assets/streamlit_dashboard.jpeg" alt="dashboard example" />
+    </div>
+
+    <!-- Example 2 -->
+    <div class="example-card" id="ai-integration">
+      <div class="example-card-text">
+        <h2>AI Integration</h2>
+        <p>some text of a case study example.... Multiline text on the left. Example image on the right.</p>
+      </div>
+      <img src="assets/ai_integration.jpg" alt="dashboard example" />
+    </div>
+
+    <!-- Example 3 -->
+    <div class="example-card" id="custom-tools">
+      <div class="example-card-text">
+        <h2>Custom Tools</h2>
+        <p>some text of a case study example.... Multiline text on the left. Example image on the right.</p>
+      </div>
+      <img src="assets/custom_tools.png" alt="dashboard example" />
+    </div>
+
+
+    <!-- About -->
+    <section id="about">
+      <div class="example-card">
+        <div class="example-card-text">
+          <h2>About</h2>
+          <p>What is Palinova.ai? Palinova.ai is .... Our mission: ...</p>
+        </div>
+        <img src="logo.svg" alt="Company logo" />
+      </div>
+    </section>
+
+    <!-- Contact Information-->
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Contact Me</h2>
+        <p>E-Mail: mail@palinova.ai</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p class="centered">2026 Palinova.ai - All rights reserved</p>
+  </footer>
+
+  <!-- JS will be linked here -->
+  <script src="script.js"></script>
 </body>
 </html>
