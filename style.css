@@ -78,6 +78,7 @@ header {
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */ 
     text-align: center;
+    padding: 1.5rem;
 }
 
 .centered {
@@ -94,3 +95,27 @@ header {
         width: 100%;
     }
 }
+
+/* Formspree */
+/* Honeypot – für Menschen unsichtbar, für Bots sichtbar */
+.hp {
+    position: absolute !important;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  
+  .form-error:not(:empty) {
+    color: var(--pico-del-color, #b3261e);
+    display: block;
+    margin-bottom: var(--pico-spacing, 1rem);
+  }
+  
+  .form-success:not(:empty) {
+    color: var(--pico-ins-color, #1a7f37);
+    border: 1px solid currentColor;
+    border-radius: var(--pico-border-radius, 0.25rem);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }

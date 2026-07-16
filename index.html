@@ -112,12 +112,42 @@
       </div>
     </section>
 
+
     <!-- Contact Information-->
     <section id="contact">
       <div class="contact-card">
         <h2>Kontakt</h2>
-        <p>Lassen Sie uns sprechen. Schreiben Sie mir eine E-Mail — ich melde mich zeitnah bei Ihnen.</p>
-        <p> E-Mail: patrick@palinova.ai</p>
+        <p>Lassen Sie uns sprechen. Beschreiben Sie kurz Ihr Anliegen — ich melde mich zeitnah bei Ihnen.</p>
+
+        <div class="form-success" data-fs-success></div>
+        <div class="form-error" data-fs-error></div>
+
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required data-fs-field />
+          <small class="form-error" data-fs-error="name"></small>
+
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required data-fs-field />
+          <small class="form-error" data-fs-error="email"></small>
+
+          <label for="organisation">Praxis / Unternehmen <span>(optional)</span></label>
+          <input type="text" id="organisation" name="organisation" autocomplete="organization" data-fs-field />
+
+          <label for="message">Ihr Anliegen</label>
+          <textarea id="message" name="message" rows="6"
+                    placeholder="Worum geht es? Gerne auch nur ein paar Stichworte." required data-fs-field></textarea>
+          <small class="form-error" data-fs-error="message"></small>
+
+          <!-- Betreffzeile der eingehenden E-Mail -->
+          <input type="hidden" name="_subject" value="Neue Anfrage über palinova.ai" />
+          <!-- Honeypot gegen Spam-Bots -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" />
+
+          <button type="submit" data-fs-submit-btn>Nachricht senden</button>
+        </form>
+
+        <p><small>Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Alternativ erreichen Sie mich unter <a href="mailto:patrick.linke@palinova.ai">patrick.linke@palinova.ai</a>.</small></p>
       </div>
     </section>
 
@@ -129,6 +159,12 @@
   </footer>
 
   <!-- JS will be linked here -->
+  <script src="script.js"></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xykrkqyo' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script src="script.js"></script>
 </body>
 </html>
