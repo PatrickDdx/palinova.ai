@@ -2,10 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Quick navigation menu (top row) */
 .card-row {
     display: flex;
-    gap: 1.5rem; /* space BETWEEN the three cards */
-    padding: 0 0;
+    gap: 1.5rem; /* space BETWEEN the cards */
     margin-bottom: 2rem;
 }
 
@@ -30,6 +30,7 @@ html {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+/* Core Services cards (/case studies) */
 .example-card  {
     display: flex;               /* text block and image sit side by side */
     align-items: center;         /* vertically center them against each other */
@@ -51,6 +52,36 @@ html {
     border-radius: 5px;
 }
 
+.example-card-text h2 {
+    font-size: 1.75rem;        /* ~28px — clear top of the hierarchy */
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--pico-color); 
+    letter-spacing: -0.01em;   /* subtle tightening reads better at large sizes */
+    margin: 0 0 0.35rem;       /* sits close to the tagline below it */
+}
+
+.example-card-text h3 {
+    font-size: 1.15rem;        /* clearly below the h2 */
+    line-height: 1.35;
+    font-weight: 500;          /* lighter → reads as a subtitle, not a heading */
+    color: var(--pico-muted-color); 
+    margin: 0 0 1rem;
+}
+
+.example-card-text p {
+    font-size: 1rem;
+    line-height: 1.65;         /* generous leading for running text */
+    color: var(--pico-color); 
+    max-width: 62ch;           /* caps line length — the biggest readability win */
+    margin: 0 0 1rem;
+}
+
+.example-card-text p:last-child {
+    margin-bottom: 0;          /* no trailing gap at the end of the text block */
+}
+
+/* header row */
 header {
     display: flex;
     justify-content: space-between;   /* one group left, one group right */
@@ -73,6 +104,7 @@ header {
     font-weight: bold;
 }
 
+/* Contact card */
 .contact-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
